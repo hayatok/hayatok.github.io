@@ -1,4 +1,4 @@
-baseurl = "https://www.example.org/"
+baseurl = "https://hayatok.github.io/"
 title = "hayatok.note.me"
 copyright = "Copyright &copy; 2020 - hayatok"
 canonifyurls = true
