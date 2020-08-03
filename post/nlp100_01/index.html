@@ -1,0 +1,230 @@
+<!doctype html><html lang=ja><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>NLP100本ノック 第1章: 準備運動 - hayatok.note.me</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="hayatok"><meta name=description content="自然言語処理100本ノック(2020版)に挑戦中。"><meta name=keywords content="Hugo,theme,even"><meta name=generator content="Hugo 0.70.0 with theme even"><link rel=canonical href=https://hayatok.github.io/post/nlp100_01/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property="og:title" content="NLP100本ノック 第1章: 準備運動"><meta property="og:description" content="自然言語処理100本ノック(2020版)に挑戦中。"><meta property="og:type" content="article"><meta property="og:url" content="https://hayatok.github.io/post/nlp100_01/"><meta property="article:published_time" content="2020-08-02T00:00:00+00:00"><meta property="article:modified_time" content="2020-08-02T00:00:00+00:00"><meta itemprop=name content="NLP100本ノック 第1章: 準備運動"><meta itemprop=description content="自然言語処理100本ノック(2020版)に挑戦中。"><meta itemprop=datePublished content="2020-08-02T00:00:00+00:00"><meta itemprop=dateModified content="2020-08-02T00:00:00+00:00"><meta itemprop=wordCount content="1818"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="NLP100本ノック 第1章: 準備運動"><meta name=twitter:description content="自然言語処理100本ノック(2020版)に挑戦中。"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>hayatok.note.me</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>hayatok.note.me</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>NLP100本ノック 第1章: 準備運動</h1><div class=post-meta><span class=post-time>2020-08-02</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>コンテンツ</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#00-文字列の逆順>00. 文字列の逆順</a><ul><li><a href=#コード>コード</a></li><li><a href=#実行結果>実行結果</a></li></ul></li><li><a href=#01-パタトクカシーー>01. 「パタトクカシーー」</a><ul><li><a href=#コード-1>コード</a></li><li><a href=#実行結果-1>実行結果</a></li></ul></li><li><a href=#02-パトカータクシーパタトクカシーー>02. 「パトカー」＋「タクシー」＝「パタトクカシーー」</a><ul><li><a href=#コード-2>コード</a></li><li><a href=#実行結果-2>実行結果</a></li></ul></li><li><a href=#03-円周率>03. 円周率</a><ul><li><a href=#コード-3>コード</a></li><li><a href=#実行結果-3>実行結果</a></li></ul></li><li><a href=#04-元素記号>04. 元素記号</a><ul><li><a href=#コード-4>コード</a></li><li><a href=#実行結果-4>実行結果</a></li></ul></li><li><a href=#05-n-gram>05. n-gram</a><ul><li><a href=#コード-5>コード</a></li><li><a href=#実行結果-5>実行結果</a></li></ul></li><li><a href=#06-集合>06. 集合</a><ul><li><a href=#コード-6>コード</a></li><li><a href=#実行結果-6>実行結果</a></li></ul></li><li><a href=#07-テンプレートによる文生成>07. テンプレートによる文生成</a><ul><li><a href=#コード-7>コード</a></li><li><a href=#実行結果-7>実行結果</a></li></ul></li><li><a href=#08-暗号文>08. 暗号文</a><ul><li><a href=#コード-8>コード</a></li><li><a href=#実行結果-8>実行結果</a></li></ul></li><li><a href=#09-typoglycemiapermalink>09. TypoglycemiaPermalink</a><ul><li><a href=#コード-9>コード</a></li><li><a href=#実行結果-9>実行結果</a></li></ul></li></ul></nav></div></div><div class=post-content><p>自然言語処理100本ノック(2020版)に挑戦中。</p><h2 id=00-文字列の逆順>00. 文字列の逆順</h2><blockquote><p>文字列”stressed”の文字を逆に（末尾から先頭に向かって）並べた文字列を得よ．</p></blockquote><p>スライシング([start:stop:step])で文字列の逆順(stepを-1に)を取得する。</p><h3 id=コード>コード</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>text</span> <span class=o>=</span> <span class=s1>&#39;stressed&#39;</span>
+<span class=k>print</span><span class=p>(</span><span class=n>text</span><span class=p>[::</span><span class=o>-</span><span class=mi>1</span><span class=p>])</span>
+</code></pre></td></tr></table></div></div><h3 id=実行結果>実行結果</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>desserts
+</code></pre></td></tr></table></div></div><h2 id=01-パタトクカシーー>01. 「パタトクカシーー」</h2><blockquote><p>「パタトクカシーー」という文字列の1,3,5,7文字目を取り出して連結した文字列を得よ．</p></blockquote><p>00と同様。step=2で、1つ飛ばしで文字を取得する。</p><h3 id=コード-1>コード</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>text</span> <span class=o>=</span> <span class=s1>&#39;パタトクカシーー&#39;</span>
+<span class=k>print</span><span class=p>(</span><span class=n>text</span><span class=p>[::</span><span class=mi>2</span><span class=p>])</span>
+</code></pre></td></tr></table></div></div><h3 id=実行結果-1>実行結果</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>パトカー
+</code></pre></td></tr></table></div></div><h2 id=02-パトカータクシーパタトクカシーー>02. 「パトカー」＋「タクシー」＝「パタトクカシーー」</h2><blockquote><p>「パトカー」＋「タクシー」の文字を先頭から交互に連結して文字列「パタトクカシーー」を得よ．</p></blockquote><p>2つの文字列の先頭から1文字ずつ取得して連結する。</p><p><a href=https://docs.python.org/ja/3/library/functions.html#zip>zip関数</a>は、複数のイテラブルなオブジェクトから、それらの要素を集めたイテレータを作成する。
+(利用例：複数のリストを1つのループで同時に走査する等)</p><h3 id=コード-2>コード</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>text1</span> <span class=o>=</span> <span class=s1>&#39;パトカー&#39;</span>
+<span class=n>text2</span> <span class=o>=</span> <span class=s1>&#39;タクシー&#39;</span>
+<span class=n>arr</span> <span class=o>=</span> <span class=p>[</span><span class=n>i</span> <span class=o>+</span> <span class=n>j</span> <span class=k>for</span> <span class=n>i</span><span class=p>,</span> <span class=n>j</span> <span class=ow>in</span> <span class=nb>zip</span><span class=p>(</span><span class=n>text1</span><span class=p>,</span> <span class=n>text2</span><span class=p>)]</span>
+<span class=n>result</span> <span class=o>=</span> <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>arr</span><span class=p>)</span>
+<span class=k>print</span><span class=p>(</span><span class=n>result</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><h3 id=実行結果-2>実行結果</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>パタトクカシーー
+</code></pre></td></tr></table></div></div><h2 id=03-円周率>03. 円周率</h2><blockquote><p>“Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics.”という文を単語に分解し，各単語の（アルファベットの）文字数を先頭から出現順に並べたリストを作成せよ．</p></blockquote><h3 id=コード-3>コード</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>text</span> <span class=o>=</span> <span class=s1>&#39;Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics.&#39;</span>
+<span class=n>cl</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>sub</span><span class=p>(</span><span class=s1>&#39;[,\.]&#39;</span><span class=p>,</span> <span class=s1>&#39;&#39;</span><span class=p>,</span> <span class=n>text</span><span class=p>)</span>
+<span class=n>result</span> <span class=o>=</span> <span class=n>cl</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39; &#39;</span><span class=p>)</span>
+<span class=n>pprint</span><span class=o>.</span><span class=n>pprint</span><span class=p>(</span><span class=n>result</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><h3 id=実行結果-3>実行結果</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>[&#39;Now&#39;,
+ &#39;I&#39;,
+ &#39;need&#39;,
+ &#39;a&#39;,
+ &#39;drink&#39;,
+ &#39;alcoholic&#39;,
+ &#39;of&#39;,
+ &#39;course&#39;,
+ &#39;after&#39;,
+ &#39;the&#39;,
+ &#39;heavy&#39;,
+ &#39;lectures&#39;,
+ &#39;involving&#39;,
+ &#39;quantum&#39;,
+ &#39;mechanics&#39;]
+</code></pre></td></tr></table></div></div><h2 id=04-元素記号>04. 元素記号</h2><blockquote><p>“Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can.”という文を単語に分解し，1, 5, 6, 7, 8, 9, 15, 16, 19番目の単語は先頭の1文字，それ以外の単語は先頭の2文字を取り出し，取り出した文字列から単語の位置（先頭から何番目の単語か）への連想配列（辞書型もしくはマップ型）を作成せよ．</p></blockquote><h3 id=コード-4>コード</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>text</span> <span class=o>=</span> <span class=s1>&#39;Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can.&#39;</span>
+<span class=n>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=mi>6</span><span class=p>,</span> <span class=mi>7</span><span class=p>,</span> <span class=mi>8</span><span class=p>,</span> <span class=mi>9</span><span class=p>,</span> <span class=mi>15</span><span class=p>,</span> <span class=mi>16</span><span class=p>,</span> <span class=mi>19</span><span class=p>]</span>
+<span class=n>wordm</span> <span class=o>=</span> <span class=p>{}</span>
+<span class=k>for</span> <span class=n>i</span><span class=p>,</span> <span class=n>v</span> <span class=ow>in</span> <span class=nb>enumerate</span><span class=p>(</span><span class=n>text</span><span class=o>.</span><span class=n>split</span><span class=p>()):</span>
+    <span class=k>if</span> <span class=n>i</span><span class=o>+</span><span class=mi>1</span> <span class=ow>in</span> <span class=n>arr</span><span class=p>:</span>
+        <span class=n>wordm</span><span class=p>[</span><span class=n>v</span><span class=p>[:</span><span class=mi>1</span><span class=p>]]</span> <span class=o>=</span> <span class=n>i</span>
+    <span class=k>else</span><span class=p>:</span>
+        <span class=n>wordm</span><span class=p>[</span><span class=n>v</span><span class=p>[:</span><span class=mi>2</span><span class=p>]]</span> <span class=o>=</span> <span class=n>i</span>
+
+<span class=k>for</span> <span class=n>k</span><span class=p>,</span> <span class=n>v</span> <span class=ow>in</span> <span class=n>wordm</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+    <span class=k>print</span><span class=p>(</span><span class=n>k</span><span class=p>,</span> <span class=n>v</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><h3 id=実行結果-4>実行結果</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>H 0
+He 1
+Li 2
+Be 3
+B 4
+C 5
+N 6
+O 7
+F 8
+Ne 9
+Na 10
+Mi 11
+Al 12
+Si 13
+P 14
+S 15
+Cl 16
+Ar 17
+K 18
+Ca 19
+</code></pre></td></tr></table></div></div><h2 id=05-n-gram>05. n-gram</h2><blockquote><p>与えられたシーケンス（文字列やリストなど）からn-gramを作る関数を作成せよ．この関数を用い，”I am an NLPer”という文から単語bi-gram，文字bi-gramを得よ．</p></blockquote><h3 id=コード-5>コード</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>n_gram</span><span class=p>(</span><span class=n>seq</span><span class=p>,</span> <span class=n>n</span><span class=p>):</span>
+    <span class=n>length</span> <span class=o>=</span> <span class=nb>len</span><span class=p>(</span><span class=n>seq</span><span class=p>)</span>
+    <span class=n>n_gram</span> <span class=o>=</span> <span class=p>[]</span>
+    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>length</span> <span class=o>-</span> <span class=n>n</span> <span class=o>+</span> <span class=mi>1</span><span class=p>):</span>
+        <span class=n>n_gram</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>seq</span><span class=p>[</span><span class=n>i</span><span class=p>:</span><span class=n>i</span><span class=o>+</span><span class=n>n</span><span class=p>])</span>
+    <span class=k>return</span> <span class=n>n_gram</span>
+</code></pre></td></tr></table></div></div><h3 id=実行結果-5>実行結果</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>[&#39;I &#39;, &#39; a&#39;, &#39;am&#39;, &#39;m &#39;, &#39; a&#39;, &#39;an&#39;, &#39;n &#39;, &#39; N&#39;, &#39;NL&#39;, &#39;LP&#39;, &#39;Pe&#39;, &#39;er&#39;]
+[[&#39;I&#39;, &#39;am&#39;], [&#39;am&#39;, &#39;an&#39;], [&#39;an&#39;, &#39;NLPer&#39;]]
+</code></pre></td></tr></table></div></div><h2 id=06-集合>06. 集合</h2><blockquote><p>“paraparaparadise”と”paragraph”に含まれる文字bi-gramの集合を，それぞれ, XとYとして求め，XとYの和集合，積集合，差集合を求めよ．さらに，’se’というbi-gramがXおよびYに含まれるかどうかを調べよ．</p></blockquote><h3 id=コード-6>コード</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>X</span> <span class=o>=</span> <span class=nb>set</span><span class=p>(</span><span class=n>n_gram</span><span class=p>(</span><span class=s2>&#34;paraparaparadise&#34;</span><span class=p>,</span> <span class=mi>2</span><span class=p>))</span>
+<span class=n>Y</span> <span class=o>=</span> <span class=nb>set</span><span class=p>(</span><span class=n>n_gram</span><span class=p>(</span><span class=s2>&#34;paragraph&#34;</span><span class=p>,</span> <span class=mi>2</span><span class=p>))</span>
+<span class=k>print</span><span class=p>(</span><span class=n>X</span> <span class=o>|</span> <span class=n>Y</span><span class=p>)</span>
+<span class=k>print</span><span class=p>(</span><span class=n>X</span> <span class=o>&amp;</span> <span class=n>Y</span><span class=p>)</span>
+<span class=k>print</span><span class=p>(</span><span class=n>X</span> <span class=o>-</span> <span class=n>Y</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><h3 id=実行結果-6>実行結果</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>{&#39;se&#39;, &#39;ar&#39;, &#39;ap&#39;, &#39;pa&#39;, &#39;ad&#39;, &#39;ph&#39;, &#39;di&#39;, &#39;ra&#39;, &#39;gr&#39;, &#39;is&#39;, &#39;ag&#39;}
+{&#39;ar&#39;, &#39;ap&#39;, &#39;pa&#39;, &#39;ra&#39;}
+{&#39;se&#39;, &#39;is&#39;, &#39;di&#39;, &#39;ad&#39;}
+</code></pre></td></tr></table></div></div><h2 id=07-テンプレートによる文生成>07. テンプレートによる文生成</h2><blockquote><p>引数x, y, zを受け取り「x時のyはz」という文字列を返す関数を実装せよ．さらに，x=12, y=”気温”, z=22.4として，実行結果を確認せよ．</p></blockquote><h3 id=コード-7>コード</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>generate_sentense</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>,</span> <span class=n>z</span><span class=p>):</span>
+    <span class=k>return</span> <span class=n>f</span><span class=s1>&#39;{x}時の{y}は{z}&#39;</span>
+
+
+<span class=k>print</span><span class=p>(</span><span class=n>generate_sentense</span><span class=p>(</span><span class=mi>12</span><span class=p>,</span> <span class=s2>&#34;気温&#34;</span><span class=p>,</span> <span class=mf>22.4</span><span class=p>))</span>
+</code></pre></td></tr></table></div></div><h3 id=実行結果-7>実行結果</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>12時の気温は22.4
+</code></pre></td></tr></table></div></div><h2 id=08-暗号文>08. 暗号文</h2><blockquote><p>与えられた文字列の各文字を，以下の仕様で変換する関数cipherを実装せよ.<br>英小文字ならば(219 - 文字コード)の文字に置換<br>その他の文字はそのまま出力<br>この関数を用い，英語のメッセージを暗号化・復号化せよ</p></blockquote><h3 id=コード-8>コード</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>cipher</span><span class=p>(</span><span class=n>text</span><span class=p>):</span>
+    <span class=n>code</span> <span class=o>=</span> <span class=p>[</span><span class=nb>chr</span><span class=p>(</span><span class=mi>219</span> <span class=o>-</span> <span class=nb>ord</span><span class=p>(</span><span class=n>x</span><span class=p>))</span> <span class=k>if</span> <span class=n>x</span><span class=o>.</span><span class=n>islower</span><span class=p>()</span> <span class=k>else</span> <span class=n>x</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>text</span><span class=p>]</span>
+    <span class=k>return</span> <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>code</span><span class=p>)</span>
+
+
+<span class=n>message</span> <span class=o>=</span> <span class=s2>&#34;I have a pen.&#34;</span>
+<span class=n>message</span> <span class=o>=</span> <span class=n>cipher</span><span class=p>(</span><span class=n>message</span><span class=p>)</span>
+<span class=k>print</span><span class=p>(</span><span class=n>message</span><span class=p>)</span>
+<span class=n>message</span> <span class=o>=</span> <span class=n>cipher</span><span class=p>(</span><span class=n>message</span><span class=p>)</span>
+<span class=k>print</span><span class=p>(</span><span class=n>message</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><h3 id=実行結果-8>実行結果</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>I szev z kvm.
+I have a pen.
+</code></pre></td></tr></table></div></div><h2 id=09-typoglycemiapermalink>09. TypoglycemiaPermalink</h2><blockquote><p>スペースで区切られた単語列に対して，各単語の先頭と末尾の文字は残し，それ以外の文字の順序をランダムに並び替えるプログラムを作成せよ．ただし，長さが４以下の単語は並び替えないこととする．適当な英語の文（例えば”I couldn’t believe that I could actually understand what I was reading : the phenomenal power of the human mind .”）を与え，その実行結果を確認せよ．</p></blockquote><h3 id=コード-9>コード</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>typoglycemia</span><span class=p>(</span><span class=n>text</span><span class=p>):</span>
+    <span class=n>words_modified</span> <span class=o>=</span> <span class=p>[]</span>
+    <span class=n>words</span> <span class=o>=</span> <span class=n>text</span><span class=o>.</span><span class=n>split</span><span class=p>()</span>
+    <span class=k>for</span> <span class=n>word</span> <span class=ow>in</span> <span class=n>words</span><span class=p>:</span>
+        <span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=n>word</span><span class=p>)</span> <span class=o>&gt;</span> <span class=mi>4</span><span class=p>:</span>
+            <span class=n>word</span> <span class=o>=</span> <span class=n>word</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>+</span> \
+                <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>random</span><span class=o>.</span><span class=n>sample</span><span class=p>(</span><span class=n>word</span><span class=p>[</span><span class=mi>1</span><span class=p>:</span><span class=o>-</span><span class=mi>1</span><span class=p>],</span> <span class=nb>len</span><span class=p>(</span><span class=n>word</span><span class=p>[</span><span class=mi>1</span><span class=p>:</span><span class=o>-</span><span class=mi>1</span><span class=p>])))</span> <span class=o>+</span> <span class=n>word</span><span class=p>[</span><span class=o>-</span><span class=mi>1</span><span class=p>]</span>
+        <span class=n>words_modified</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>word</span><span class=p>)</span>
+
+    <span class=k>return</span> <span class=s1>&#39; &#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>words_modified</span><span class=p>)</span>
+
+<span class=n>text</span> <span class=o>=</span> <span class=s2>&#34;I couldn’t believe that I could actually understand what I was reading : the phenomenal power of the human mind .&#34;</span>
+<span class=k>print</span><span class=p>(</span><span class=n>typoglycemia</span><span class=p>(</span><span class=n>text</span><span class=p>))</span>
+</code></pre></td></tr></table></div></div><h3 id=実行結果-9>実行結果</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>I coudnl’t beeivle that I could aullcaty utndesnard what I was raendig : the pehoanenml poewr of the human mind .
+</code></pre></td></tr></table></div></div></div><div class=post-copyright><p class=copyright-item><span class=item-title>作成者</span>
+<span class=item-content>hayatok</span></p><p class=copyright-item><span class=item-title>最終更新時刻</span>
+<span class=item-content>2020-08-02</span></p></div><footer class=post-footer><nav class=post-nav></nav></footer></article></div></div></main><footer id=footer class=footer><div class=social-links><a href=https://hayatok.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2020
+<span class=heart><i class="iconfont icon-heart"></i></span><span class=author>hayatok</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js></script></body></html>
